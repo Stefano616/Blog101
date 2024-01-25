@@ -1,0 +1,193 @@
+/* Variables */
+:root {
+    --primary-color-0:#BD5CF3;
+    --primary-color-1: #FAF3FE;
+    --primary-color-1-transparency: hsla(277, 87%, 97%, 0.816);
+    --primary-color-2: #D59AF6;
+    --primary-color-3: #A923F3;
+    --primary-color-4: #9C02F1;
+    --secondary-color-0: #F855B1;
+    --secondary-color-1: #FFF3F9;
+    --secondary-color-2: #FA97CF;
+    --secondary-color-3: #F81897;
+    --secondary-color-4: #F6008B;
+    --divider-color-1:white;
+    --color-text-1: hsl(0, 0%, 22%);
+    --color-text-2: hsl(0, 0%, 40%);
+}
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--primary-color-1);
+    color: var(--color-text-1);
+}
+/* Header */
+header{
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    background-color: var(--primary-color-0);
+    color: var(--primary-color-1);
+}
+nav, nav ul, .nav-item, .nav-item a{
+    background-color: inherit;
+}
+nav ul{
+    width: 50vw;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-item a{
+    padding: 10px 10px;
+    display:block;
+    color: var(--primary-color-1);
+    /* border-right: 2px solid var(--primary-color-3); */
+}
+.nav-item a:hover{
+    color: var(--primary-color-0);
+    background-color: var(--primary-color-1);
+    border-radius: 35% 35% 0% 0%;
+}
+.unstyled{
+    list-style: none;
+}
+.unstyled>li>a{
+    text-decoration: none;
+}
+/* Container */
+.container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--secondary-color-1);
+}
+.container--horizontal{
+    flex-direction: row;
+}
+/* hero section */
+#hero-logo{
+    padding: 10px;
+    background-color: #faf3feda;
+    border-radius: 50%;
+    width: 200px;
+}
+#hero-section{
+    background-image: url(../images/BuggyGymCanva1350x1065.png);
+    background-color: #faf3fe80;
+    background-blend-mode: overlay;
+    min-height: 60vh;
+}
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Carousel */
+.container--carousel {
+    position: relative;
+    margin: auto;
+}
+.carousel-slide-div{
+    max-width: 60%;
+    display: none;
+}
+.slide-number-text{
+    position: absolute;
+    padding: 5px 10px;
+    top: 8%;
+    left: 22%;
+    border-radius: 10px;
+    background-color: var(--primary-color-1-transparency);
+}
+.img-carousel{
+    width: 100%;
+}
+.slide-title{
+    position: absolute;
+    padding: 5px 10px;
+    bottom: 10%;
+    left: 47%;
+    font-size: x-large;
+    border-radius: 10px;
+    background-color: var(--primary-color-1-transparency);
+}
+.btn-change-slide{
+    display: block;
+    background-color: var(--primary-color-0);
+    border-radius: 10px ;
+    padding: 30px 5px;
+    cursor: pointer;
+    color: var(--primary-color-1);
+    position: absolute;
+    top: 50%;
+    font-weight: bold;
+    font-size: x-large;
+    transition: 0.6s ease;
+    user-select: none;
+}
+.btn-change-slide:hover{
+    color: var(--primary-color-0);
+    background-color: var(--secondary-color-0);
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+.btn-change-slide--prev{
+    left: 15%;
+}
+.btn-change-slide--next{
+    right: 15%;
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: -10px 2px;
+    border-radius: 50%;
+    background-color: var(--primary-color-0);
+}
+.active, .dot:hover{
+    background-color: var(--secondary-color-0);
+    transform: scale(1.1);
+    transition-duration: 200ms;
+
+}
+.transition-slide {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes transition-slide {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+/* Categories */
+.card{
+    width: auto;
+    margin: 2px;
+    border: 2px solid var(--primary-color-0);
+}
+.card img{
+    max-height: 200px;
+    margin-bottom: 5px;
+}
+.divider{
+    width: 100%;
+    height: 5px;
+    background-color: var(--divider-color-1);
+}
+/* Aside */
+
+/* Footer */
+
