@@ -12,10 +12,10 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" dot--active", "");
   }
   slides[currentSlideIndex-1].style.display = "block";
-  dots[currentSlideIndex-1].className += " active";
+  dots[currentSlideIndex-1].className += " dot--active";
 }
 
 function changeSlide(n) {
