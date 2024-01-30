@@ -6,6 +6,7 @@
     <title>Blog Mamy Aktywnie</title>
     <link rel="shortcut icon" href="./images/logo 100x100.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/style.css">
+    <script type="module" src="./modules/posts.js"></script>
     <script type="module" src="./modules/categoriesFilter.js"></script>
 </head>
 <body>
@@ -26,7 +27,8 @@
         <div class="divider"></div>
         <section class="container">
             <ul class="unstyled unstyled--categories">
-                <li class="nav-item nav-item--categories selected" id="#activities"><a href="#">#Activities</a></li>
+                <li class="nav-item nav-item--categories selected" id="#all"><a href="#">All posts</a></li>
+                <li class="nav-item nav-item--categories" id="#activities"><a href="#">#Activities</a></li>
                 <li class="nav-item nav-item--categories" id="#fitness"><a href="#">#Fitness</a></li>
                 <li class="nav-item nav-item--categories" id="#freetime"><a href="#">#Free-time</a></li>
                 <li class="nav-item nav-item--categories" id="#events"><a href="#">#Events</a></li>
@@ -35,8 +37,8 @@
         <div class="divider"></div>
         <section  class="container">
             <h2 class="title">Posts</h2>
-            <div class="container container--horizontal">
-                <div class="container card card--post">
+            <div class="container container--horizontal" id="postContainer">
+                <!-- <div class="container card card--post">
                     <img src="./images/buggy 1740x1245.jpg" alt="">
                     <p>Post Title</p>
                 </div>
@@ -55,7 +57,7 @@
                 <div class="container card card--post">
                     <img src="./images/BuggyGymCanva1350x1065.png" alt="">
                     <p>Post Title</p>
-                </div>
+                </div> -->
             </div>
             <!-- Categories labels -->
         </section>
