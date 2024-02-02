@@ -20,4 +20,4 @@ version control:
 
 ## Project status
 
-The website is under construction
+The website is under construction.
