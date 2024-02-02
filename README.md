@@ -16,7 +16,7 @@ The project is built using:
 
 version control:
 
-- git and Github
+- git and Github.
 
 ## Project status
 
