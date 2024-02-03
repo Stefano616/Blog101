@@ -16,8 +16,8 @@ The project is built using:
 
 version control:
 
-- git and Github
+- git and Github.
 
 ## Project status
 
-The website is under construction
+The website is under construction.
