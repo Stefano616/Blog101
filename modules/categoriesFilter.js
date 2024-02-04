@@ -2,22 +2,50 @@ import { postsInfoArray, postContentArray } from "./posts.js"
 
 const categoriesArray = document.getElementsByClassName("nav-item--categories");
 let postContainer = document.getElementById("postContainer");
+let selectedCategoriesArray = [];
 
 function createHtmlPostInfo(postInfo) {
     return `<div class="container card card--post">
             <img src=${postInfo.image} alt=${postInfo.description}>
             <p>${postInfo.title}</p>
+            <p>${postInfo.tags}</p>
         </div>`;
 }
-
-let selectedCategoriesArray = [];
-
-for (let i = 0; i < categoriesArray.length; i++) {
-    if (categoriesArray[i].classList.contains('selected')) {
-        selectedCategoriesArray.push(categoriesArray[i].id)
-    }
+const loadPosts = () => {
+    let loadAllPosts = ["#all"];
+    showPosts(loadAllPosts);
 }
-let selectedCategoies = `"${selectedCategoriesArray.join('","')}"`;
-console.log(selectedCategoies);
-
-postsInfoArray.filter((el) => el.tags.includes("#activities", "#fitness")).map((post) => postContainer.innerHTML += createHtmlPostInfo(post));
+const showPosts = (postToShow) => {
+    postToShow.map((category) => {
+        postsInfoArray.filter((postCategory) => postCategory.tags.includes(category)).map((post) => {
+            postContainer.innerHTML += createHtmlPostInfo(post);
+        })
+    })
+};
+const updatePosts = (e) => {
+    e.preventDefault();
+    selectedCategoriesArray = [];
+    postContainer.innerHTML = "";
+    for (let i = 0; i < categoriesArray.length; i++) {
+        if (categoriesArray[i].classList.contains('selected')) {
+            selectedCategoriesArray.push(categoriesArray[i].id)
+        }
+    }
+    showPosts(selectedCategoriesArray);
+};
+function allSelectedtoggleCategoriesOff(e) {
+    for (let i = 1; i < categoriesArray.length; i++) {
+        categoriesArray[i].classList.toggle("selected", false);
+    }
+    categoriesArray[0].classList.toggle("selected");
+    updatePosts(e);
+};
+for (let i = 1; i < categoriesArray.length; i++) {
+    categoriesArray[i].addEventListener("click", (e) => {
+        categoriesArray[i].classList.toggle("selected");
+        categoriesArray[0].classList.toggle("selected", false);
+        updatePosts(e);
+    });
+};
+categoriesArray[0].addEventListener("click", (e) => allSelectedtoggleCategoriesOff(e));
+loadPosts();

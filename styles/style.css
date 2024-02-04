@@ -52,7 +52,7 @@ nav ul,
 
 .unstyled--categories {
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .nav-item a {
@@ -70,14 +70,23 @@ nav ul,
 
 .nav-item--categories,
 .nav-item--categories a {
+    color: var(--primary-color-1);
+    background-color: var(--primary-color-0);
+    border: 1px solid var(--primary-color-0);
     border-radius: 10px;
 }
 
-.nav-item--categories a:hover,
+.nav-item--categories:hover,
+.nav-item--categories a:hover {
+    transform: scale(102%);
+    transition-duration: 200ms;
+    border-radius: 10px;
+}
+
 .selected a {
     color: var(--primary-color-0);
     background-color: var(--primary-color-1);
-    border: 2px solid var(--primary-color-0);
+    border: 1px solid var(--primary-color-0);
     border-radius: 10px;
 }
 
@@ -212,16 +221,6 @@ nav ul,
     animation-duration: 1.5s;
 }
 
-@keyframes transition-slide {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
 /* Categories */
 .card {
     width: auto;
@@ -252,3 +251,15 @@ nav ul,
 /* Aside */
 
 /* Footer */
+
+/* keyframes */
+
+@keyframes transition-slide {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
