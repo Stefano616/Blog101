@@ -11,10 +11,6 @@ function createHtmlPostInfo(postInfo) {
             <p>${postInfo.tags}</p>
         </div>`;
 }
-const loadPosts = () => {
-    let loadAllPosts = ["#all"];
-    showPosts(loadAllPosts);
-}
 const showPosts = (postToShow) => {
     postToShow.map((category) => {
         postsInfoArray.filter((postCategory) => postCategory.tags.includes(category)).map((post) => {
@@ -22,6 +18,15 @@ const showPosts = (postToShow) => {
         })
     })
 };
+const loadPosts = () => {
+    if (localStorage) {
+        showPosts(localStorage.getItem(localStorage.key(0)).split());
+        localStorage.clear();
+    } else {
+        let loadAllPosts = ["#all"];
+        showPosts(loadAllPosts);
+    }
+}
 const updatePosts = (e) => {
     e.preventDefault();
     selectedCategoriesArray = [];

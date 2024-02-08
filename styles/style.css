@@ -90,9 +90,11 @@ nav ul,
     border-radius: 10px;
 }
 
-.unstyled>li>a {
+.unstyled>li>a,
+.unstyled--link {
     text-decoration: none;
 }
+
 
 /* Container */
 .container {
@@ -222,16 +224,15 @@ nav ul,
 }
 
 /* Categories */
-.card {
+.card,
+.card--post {
     width: auto;
     margin: 2px;
     border: 2px solid var(--primary-color-0);
+    /* cursor: pointer; */
 }
 
-.card--post {
-    cursor: pointer;
-}
-
+.card:hover,
 .card--post:hover {
     transform: scale(102%);
     transition-duration: 200ms;
