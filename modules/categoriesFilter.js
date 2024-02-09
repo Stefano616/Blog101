@@ -19,12 +19,15 @@ const showPosts = (postToShow) => {
     })
 };
 const loadPosts = () => {
-    if (localStorage) {
-        showPosts(localStorage.getItem(localStorage.key(0)).split());
-        localStorage.clear();
-    } else {
+    if (!localStorage.key(0)) {
         let loadAllPosts = ["#all"];
         showPosts(loadAllPosts);
+    } else {
+        let initialCategoryArray = localStorage.getItem(localStorage.key(0)).split();
+        let initialCategoryIndex = Number(localStorage.key(0)) + 1;
+        showPosts(initialCategoryArray);
+        toggleSelectedCategoriesOn(initialCategoryIndex);
+        localStorage.clear();
     }
 }
 const updatePosts = (e) => {
@@ -45,10 +48,13 @@ function allSelectedtoggleCategoriesOff(e) {
     categoriesArray[0].classList.toggle("selected");
     updatePosts(e);
 };
+const toggleSelectedCategoriesOn = (index) => {
+    categoriesArray[index].classList.toggle("selected");
+    categoriesArray[0].classList.toggle("selected", false);
+}
 for (let i = 1; i < categoriesArray.length; i++) {
     categoriesArray[i].addEventListener("click", (e) => {
-        categoriesArray[i].classList.toggle("selected");
-        categoriesArray[0].classList.toggle("selected", false);
+        toggleSelectedCategoriesOn(i);
         updatePosts(e);
     });
 };
