@@ -1,16 +1,15 @@
-import { postsInfoArray, postContentArray } from "./posts.js"
+import { postsInfoArray } from "./posts.js";
 
 const categoriesArray = document.getElementsByClassName("nav-item--categories");
 let postContainer = document.getElementById("postCardsContainer");
 let selectedCategoriesArray = [];
 
 function createHtmlPostInfo(postInfo) {
-    let htmlCard = `<a href="./post.html?post_id=${postInfo.id - 1}"><div class="container card card--post">
+    return `<a href="./post.html?post_id=${postInfo.id - 1}"><div class="container card card--post">
             <img src=${postInfo.image} alt=${postInfo.description}>
             <p>${postInfo.title}</p>
             <p>${postInfo.tags}</p>
             </div></a>`;
-    return htmlCard;
 }
 const showPosts = (postToShow) => {
     postToShow.map((category) => {

@@ -4,14 +4,14 @@ const postsInfoArray = [
         image: "../images/buggy1740x1245.jpg",
         title: "Buggy gym",
         description: "",
-        tags: ["#all", "#activities"]
+        tags: ["#all", "#activities", "#slideshow"]
     },
     {
         id: 2,
         image: "../images/treningpersonalny1740x1245.jpg",
         title: "Personal trainer",
         description: "",
-        tags: ["#all", "#fitness"]
+        tags: ["#all", "#fitness", "#slideshow"]
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const postsInfoArray = [
         image: "../images/dance1740x1245.jpg",
         title: "Dancing",
         description: "",
-        tags: ["#all", "#freetime", "#events"]
+        tags: ["#all", "#freetime", "#events", "#slideshow"]
     },
     {
         id: 5,
