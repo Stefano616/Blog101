@@ -1,4 +1,5 @@
 let currentSlideIndex = 1;
+const postIndexCarusel = [3, 1, 0];
 
 function showSlides(n) {
   let i;
@@ -13,6 +14,7 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" dot--active", "");
   }
   slides[currentSlideIndex - 1].classList.remove("carousel-slide-div--hide");
+  slides[currentSlideIndex - 1].addEventListener("click", () => window.location.replace(post.html ? post_id = `${postIndexCarusel[i]}`))
   dots[currentSlideIndex - 1].className += " dot--active";
 }
 

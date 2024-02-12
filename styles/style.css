@@ -290,6 +290,13 @@ footer {
     font-size: 1.1rem;
 }
 
+/* Post */
+
+#post-image {
+    height: 60vh;
+    margin: 15px;
+}
+
 /* keyframes */
 
 @keyframes transition-slide {

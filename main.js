@@ -1,9 +1,17 @@
 import { changeSlide, currentSlide } from "./modules/slideshow.js";
 
-const btnChangeSlidePrev = document.getElementsByClassName("btn-change-slide")[0];
-const btnChangeSlideNext = document.getElementsByClassName("btn-change-slide")[1];
+const [btnChangeSlidePrev, btnChangeSlideNext] = document.getElementsByClassName("btn-change-slide");
 const dotChangeSlideArr = document.getElementsByClassName("dot");
 const categoriesCards = document.getElementsByClassName("card");
+const transitionSlides = document.getElementsByClassName("transition-slide");
+
+// const postIndexCarusel = [3, 1, 0];
+
+// for (let i = 0; i < transitionSlides.length; i++) {
+//     transitionSlides[i].addEventListener("click", () => {
+//         window.location.replace(post.html ? post_id = `${postIndexCarusel[i]}`);
+//     })
+// }
 
 for (let i = 0; i < categoriesCards.length; i++) {
     categoriesCards[i].addEventListener("click", () => {
