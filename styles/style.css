@@ -23,6 +23,7 @@
     box-sizing: border-box;
     background-color: var(--primary-color-1);
     color: var(--color-text-1);
+    font-family: 'Times New Roman', Times, serif
 }
 
 /* Header */
@@ -107,6 +108,10 @@ nav ul,
     text-decoration: none;
 }
 
+.bg-transparent {
+    background-color: transparent;
+}
+
 
 /* Container */
 .container {
@@ -122,6 +127,10 @@ nav ul,
 
 .container--horizontal {
     flex-direction: row;
+}
+
+.container--medium {
+    width: 90%;
 }
 
 /* hero section */
@@ -176,6 +185,7 @@ nav ul,
 
 .img-carousel {
     width: 100%;
+    margin-top: 10px;
 }
 
 .slide-title {
@@ -245,11 +255,11 @@ nav ul,
     width: auto;
     margin: 2px;
     border: 2px solid var(--primary-color-0);
-    /* cursor: pointer; */
 }
 
 .card:hover,
-.card--post:hover {
+.card--post:hover,
+#description>a:hover {
     transform: scale(102%);
     transition-duration: 200ms;
 }
@@ -266,9 +276,13 @@ nav ul,
 }
 
 /* About */
+.container--small {
+    width: 70%;
+}
+
 #profile-picture {
-    max-height: 300px;
-    margin-right: 15px;
+    max-width: 30%;
+    margin-right: 5px;
     float: left;
 }
 
@@ -277,16 +291,66 @@ img {
 }
 
 #description {
-    max-width: 600px;
-    margin: 25px 15px;
+    max-width: 500px;
+    margin: 15px;
+    align-self: flex-start;
     text-align: justify;
 }
 
 #description p {
     background-color: var(--secondary-color-1);
+    margin: 5px;
 }
 
-/* Aside */
+.button {
+    padding: 5px;
+    border: var(--primary-color-0) solid 2px;
+    background-color: var(--primary-color-1);
+}
+
+.container--about {
+    justify-content: space-around;
+}
+
+.text-styled {
+    font-family: "Mrs Saint Delafield",
+        cursive;
+    font-weight: 550;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+/* Contact */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: transparent;
+}
+
+input,
+textarea {
+    padding: 5px;
+    margin: 10px;
+    border: 0;
+    border-bottom: 2px solid var(--primary-color-0);
+    font-size: large;
+    background-color: var(--secondary-color-1);
+}
+
+input:focus,
+textarea:focus,
+.btn-send:hover {
+    transform: scale(102%);
+    transition-duration: 200ms;
+    outline: none;
+}
+
+.btn-send {
+    width: 30%;
+    border: 2px solid var(--primary-color-0);
+}
+
 
 /* Footer */
 footer {
@@ -300,6 +364,12 @@ footer {
     height: 60vh;
     margin: 15px;
 }
+
+#post-container {
+    margin: 0 auto;
+    gap: 5px;
+}
+
 
 /* keyframes */
 

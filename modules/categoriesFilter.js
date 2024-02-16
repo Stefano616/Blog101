@@ -1,4 +1,5 @@
-import { postsInfoArray } from "./posts.js";
+// import { postsInfoArray } from "./posts.js";
+import postsDataJSON from "../posts-data.json" assert {type: 'json'};
 
 const categoriesArray = document.getElementsByClassName("nav-item--categories");
 let postContainer = document.getElementById("postCardsContainer");
@@ -13,7 +14,9 @@ function createHtmlPostInfo(postInfo) {
 }
 const showPosts = (postToShow) => {
     postToShow.map((category) => {
-        postsInfoArray.filter((postCategory) => postCategory.tags.includes(category)).map((post) => {
+        // postsInfoArray.filter((postCategory) => postCategory.tags.includes(category)).map((post) => {
+        //     postContainer.innerHTML += createHtmlPostInfo(post);
+        postsDataJSON.posts.filter((postCategory) => postCategory.tags.includes(category)).map((post) => {
             postContainer.innerHTML += createHtmlPostInfo(post);
         })
     })
