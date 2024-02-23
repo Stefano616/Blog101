@@ -41,7 +41,6 @@ nav ul,
 .nav-item,
 .nav-item a {
     background-color: var(--primary-color-0);
-
 }
 
 .unstyled {
@@ -72,6 +71,17 @@ nav ul,
     padding: 10px 10px;
     display: block;
     color: var(--primary-color-1);
+}
+
+.social-icon--header,
+.social-icon--header>i {
+    background-color: var(--primary-color-0);
+    color: var(--primary-color-1);
+}
+
+.social-icon--header {
+    font-size: large;
+    padding: 0 10px;
 }
 
 .nav-item a:hover,
@@ -146,6 +156,10 @@ nav ul,
     background-color: #faf3fe80;
     background-blend-mode: overlay;
     min-height: 60vh;
+}
+
+#hero-section>a {
+    background-color: transparent;
 }
 
 .parallax {
@@ -368,6 +382,15 @@ footer {
 #post-container {
     margin: 0 auto;
     gap: 5px;
+}
+
+.post-para {
+    margin: 10px;
+}
+
+.post-list-item {
+    margin: 5px 10px;
+    list-style-position: inside;
 }
 
 

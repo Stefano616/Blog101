@@ -7,7 +7,7 @@ const postImage = document.getElementById("post-image")
 const createHtmlPost = (postData, postContent) => {
     return `<h2>${postData.title}</h2>
             <div>
-                <p>${postContent.content}</p>
+                ${postContent.content}
             </div>`
 }
 
