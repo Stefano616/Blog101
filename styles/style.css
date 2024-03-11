@@ -36,6 +36,10 @@ header {
     color: var(--primary-color-1);
 }
 
+.mobile-nav-toggle {
+    display: none;
+}
+
 nav,
 nav ul,
 .nav-item,
@@ -111,7 +115,6 @@ nav ul,
 .bg-transparent {
     background-color: transparent;
 }
-
 
 /* Container */
 .container {
@@ -380,5 +383,59 @@ footer {
 
     to {
         opacity: 1
+    }
+}
+
+/* mediaqueries */
+@media (max-width:580px) {
+    .mobile-nav-toggle {
+        display: block;
+        z-index: 9999;
+        border: none;
+        background-color: transparent;
+        padding-block: 5px;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        border-radius: 25px;
+        background-color: var(--primary-color-1);
+        transition: all 300ms ease-in-out;
+    }
+
+    .mobile-nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        padding-inline: 2em;
+        position: fixed;
+        top: 39px;
+        right: -100%;
+        transition: 300ms;
+    }
+
+    .navigation.active {
+        right: 0%;
+    }
+
+    .nav-item a:hover,
+    .nav-item--active a {
+        border-radius: 15px;
     }
 }
