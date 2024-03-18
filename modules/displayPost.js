@@ -1,19 +1,33 @@
-import { postContentArray } from "./posts.js";
-import postsDataJSON from "../posts-data.json" assert {type: 'json'};
+import { postContentArray } from './posts.js';
+// import postsDataJSON from '../posts-data.json' assert { type: 'json' };
 
-const postContainer = document.getElementById("post-container");
-const postImage = document.getElementById("post-image")
+const postContainer = document.getElementById('post-container');
+const postImage = document.getElementById('post-image');
 
 const createHtmlPost = (postData, postContent) => {
-    return `<h2>${postData.title}</h2>
-            <div>
-                <p>${postContent.content}</p>
-            </div>`
-}
+  const contentHtml = `<h2>${postData.title}</h2>
+                            <div>
+                              <p>${postContent.content}</p>
+                            </div>`;
+  return contentHtml;
+};
 
 const displayPost = () => {
-    let postId = new URLSearchParams(window.location.search).get("post_id");
-    postImage.setAttribute("src", postsDataJSON.posts[postId].image)
-    postContainer.innerHTML += createHtmlPost(postsDataJSON.posts[postId], postContentArray[postId]);
-}
-displayPost()
+  const postId = new URLSearchParams(window.location.search).get('post_id');
+  fetch('../posts-data.json')
+    .then((response) => response.json())
+    .then((postsDataJSON) => {
+      postImage.setAttribute('src', postsDataJSON.posts[postId].image);
+      postContainer.innerHTML += createHtmlPost(
+        postsDataJSON.posts[postId],
+        postContentArray[postId],
+      );
+    });
+  // postImage.setAttribute('src', fetch('../post-data.json').then((response)=>response.json()).then((postsData)=>postsData.posts[postId].image));
+  // postImage.setAttribute('src', postsDataJSON[postId].image);
+  // postContainer.innerHTML += createHtmlPost(
+  //   postsDataJSON.posts[postId],
+  //   postContentArray[postId],
+  // );
+};
+displayPost();
