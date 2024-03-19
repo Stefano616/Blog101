@@ -1,114 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Mamy Aktywnie</title>
-    <link rel="shortcut icon" href="./images/logo 100x100.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/logo 100x100.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
     <script type="module" src="main.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <ul class="unstyled unstyled--social">
-            <li><a class="social-icon social-icon--header"
-                    href="https://www.facebook.com/profile.php?id=100093119156084"><i class="fab fa-facebook"></i></a>
-            </li>
-            <li><a class="social-icon social-icon--header"
-                    href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="><i
-                        class="fab fa-instagram"></i></a></li>
+      <ul class="unstyled unstyled--social">
+        <li>
+          <a
+            class="social-icon social-icon--header"
+            href="https://www.facebook.com/profile.php?id=100093119156084"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon social-icon--header"
+            href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
+      <nav>
+        <ul class="unstyled">
+          <li class="nav-item nav-item--active">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="nav-item"><a href="./categories.html">All posts</a></li>
+          <li class="nav-item"><a href="./about.html">About</a></li>
+          <li class="nav-item"><a href="./contact.html">Contacts</a></li>
         </ul>
-        <nav>
-            <ul class="unstyled">
-                <li class="nav-item nav-item--active"><a href="index.html">Home</a></li>
-                <li class="nav-item"><a href="./categories.html">All posts</a></li>
-                <li class="nav-item"><a href="./about.html">About</a></li>
-                <li class="nav-item"><a href="./contact.html">Contacts</a></li>
-            </ul>
-        </nav>
+      </nav>
     </header>
     <main>
-        <section class="container parallax" id="hero-section">
-            <a href="./index.html"><img src="./images/transLogo200x200.png" alt="mamy aktywnie po kobiecemu"
-                    id="hero-logo"></a>
-        </section>
-        <div class="divider"></div>
-        <section class="container ">
-            <div class="container container--carousel" id="carusel-slides-container">
-                <h2 class="title">Latest posts</h2>
-                <a class="btn-change-slide btn-change-slide--prev">&#10094;</a>
-                <a class="btn-change-slide btn-change-slide--next">&#10095;</a>
+      <section class="container parallax" id="hero-section">
+        <a href="./index.html">
+          <img
+            src="./images/transLogo200x200.png"
+            alt="mamy aktywnie po kobiecemu"
+            id="hero-logo"
+          />
+        </a>
+      </section>
+      <div class="divider"></div>
+      <section class="container">
+        <div
+          class="container container--carousel"
+          id="carusel-slides-container"
+        >
+          <h2 class="title">Latest posts</h2>
+          <a class="btn-change-slide btn-change-slide--prev">&#10094;</a>
+          <a class="btn-change-slide btn-change-slide--next">&#10095;</a>
+        </div>
+        <div class="container container--horizontal">
+          <span class="dot dot--active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="container">
+        <h2 class="title">Categories</h2>
+        <div class="container container--horizontal">
+          <a href="./categories.html" class="unstyled--link">
+            <div class="container card" id="#activities">
+              <img src="./images/buggy1740x1245.jpg" alt="" />
+              <p class="bg-transparent">#Activities</p>
             </div>
-            <div class="container container--horizontal">
-                <span class="dot dot--active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+          </a>
+          <a href="./categories.html" class="unstyled--link">
+            <div class="container card" id="#fitness">
+              <img src="./images/treningpersonalny1740x1245.jpg" alt="" />
+              <p class="bg-transparent">#Fitness</p>
             </div>
-        </section>
-        <div class="divider"></div>
-        <section class="container">
-            <h2 class="title">Categories</h2>
-            <div class="container container--horizontal">
-                <a href="./categories.html" class="unstyled--link">
-                    <div class="container card" id="#activities">
-                        <img src="./images/buggy1740x1245.jpg" alt="">
-                        <p class="bg-transparent">#Activities</p>
-                    </div>
-                </a>
-                <a href="./categories.html" class="unstyled--link">
-                    <div class="container card" id="#fitness">
-                        <img src="./images/treningpersonalny1740x1245.jpg" alt="">
-                        <p class="bg-transparent">#Fitness</p>
-                    </div>
-                </a>
-                <a href="./categories.html" class="unstyled--link">
-                    <div class="container card" id="#freetime">
-                        <img src="./images/dance1740x1245.jpg" alt="">
-                        <p class="bg-transparent">#Free-time</p>
-                    </div>
-                </a>
-                <a href="./categories.html" class="unstyled--link">
-                    <div class="container card" id="#events">
-                        <img src="./images/BuggyGymCanva1350x1065.png" alt="">
-                        <p class="bg-transparent">#Events</p>
-                    </div>
-                </a>
+          </a>
+          <a href="./categories.html" class="unstyled--link">
+            <div class="container card" id="#freetime">
+              <img src="./images/dance1740x1245.jpg" alt="" />
+              <p class="bg-transparent">#Free-time</p>
             </div>
-        </section>
-        <div class="divider"></div>
-        <section class="container">
-            <h2 class="title">Meet the author</h2>
-            <!-- Image and description -->
-            <div class="container container--horizontal container--small">
-                <img src="./images/AboutMe2.jpg" alt="profile picture" id="profile-picture">
-                <div class="container" id="description">
-                    <p>Tu Aga Rocchetti (czytaj przez K jak ta kawa macchiato:))!
-                        Jest mi bardzo miło, że tutaj zaglądasz i z chęcią opowiem Ci więcej o mnie.
-                        Z pasji do ruchu, tańca, treningów, ludzi i wszelakiej aktywności postanowiłam stworzyć miejsce
-                        jakim jest Mamy Aktywnie - po kobiecemu.
-                        Rozgość się na mojej stronie, a ja mam nadzieję, że wkrótce spotkamy się osobiście!
-                    </p>
-                    <a href="./about.html" class="unstyled--link bg-transparent">
-                        <p class="button">Read more!</p>
-                    </a>
-                </div>
+          </a>
+          <a href="./categories.html" class="unstyled--link">
+            <div class="container card" id="#events">
+              <img src="./images/BuggyGymCanva1350x1065.png" alt="" />
+              <p class="bg-transparent">#Events</p>
             </div>
-        </section>
-        <div class="divider"></div>
+          </a>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="container">
+        <h2 class="title">Meet the author</h2>
+        <!-- Image and description -->
+        <div class="container container--horizontal container--small">
+          <img
+            src="./images/AboutMe2.jpg"
+            alt="profile picture"
+            id="profile-picture"
+          />
+          <div class="container" id="description">
+            <p>
+              Tu Aga Rocchetti (czytaj przez K jak ta kawa macchiato:))! Jest mi
+              bardzo miło, że tutaj zaglądasz i z chęcią opowiem Ci więcej o
+              mnie. Z pasji do ruchu, tańca, treningów, ludzi i wszelakiej
+              aktywności postanowiłam stworzyć miejsce jakim jest Mamy Aktywnie
+              - po kobiecemu. Rozgość się na mojej stronie, a ja mam nadzieję,
+              że wkrótce spotkamy się osobiście!
+            </p>
+            <a href="./about.html" class="unstyled--link bg-transparent">
+              <p class="button">Read more!</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="divider"></div>
     </main>
     <footer class="container container--horizontal">
-        <p>Mamy Aktywnie | Stefano Rocchetti</p>
-        <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
-        <ul class="unstyled unstyled--social">
-            <li><a class="social-icon" href="https://www.facebook.com/profile.php?id=100093119156084"><i
-                        class="fab fa-facebook-f"></i></a></li>
-            <li><a class="social-icon" href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="><i
-                        class="fab fa-instagram"></i></a></li>
-        </ul>
+      <p>Mamy Aktywnie | Stefano Rocchetti</p>
+      <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
+      <ul class="unstyled unstyled--social">
+        <li>
+          <a
+            class="social-icon"
+            href="https://www.facebook.com/profile.php?id=100093119156084"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon"
+            href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>

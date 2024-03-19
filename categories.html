@@ -1,69 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Mamy Aktywnie</title>
-    <link rel="shortcut icon" href="./images/logo 100x100.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/logo 100x100.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
     <script type="module" src="./modules/posts.js"></script>
     <script type="module" src="./modules/categoriesFilter.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <ul class="unstyled unstyled--social">
-            <li><a class="social-icon social-icon--header"
-                    href="https://www.facebook.com/profile.php?id=100093119156084"><i class="fab fa-facebook"></i></a>
-            </li>
-            <li><a class="social-icon social-icon--header"
-                    href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="><i
-                        class="fab fa-instagram"></i></a></li>
+      <ul class="unstyled unstyled--social">
+        <li>
+          <a
+            class="social-icon social-icon--header"
+            href="https://www.facebook.com/profile.php?id=100093119156084"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon social-icon--header"
+            href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
+      <nav>
+        <ul class="unstyled">
+          <li class="nav-item"><a href="./index.html">Home</a></li>
+          <li class="nav-item nav-item--active">
+            <a href="./categories.html">All posts</a>
+          </li>
+          <li class="nav-item"><a href="./about.html">About</a></li>
+          <li class="nav-item"><a href="./contact.html">Contacts</a></li>
         </ul>
-        <nav>
-            <ul class="unstyled">
-                <li class="nav-item"><a href="./index.html">Home</a></li>
-                <li class="nav-item nav-item--active"><a href="./categories.html">All posts</a></li>
-                <li class="nav-item"><a href="./about.html">About</a></li>
-                <li class="nav-item"><a href="./contact.html">Contacts</a></li>
-            </ul>
-        </nav>
+      </nav>
     </header>
     <main>
-        <section class="container parallax" id="hero-section">
-            <a href="./index.html"><img src="./images/transLogo200x200.png" alt="mamy aktywnie po kobiecemu"
-                    id="hero-logo"></a>
-        </section>
-        <div class="divider"></div>
-        <section class="container">
-            <ul class="unstyled unstyled--categories">
-                <li class="nav-item nav-item--categories selected" id="#all"><a href="#">All posts</a></li>
-                <li class="nav-item nav-item--categories" id="#activities"><a href="#">#Activities</a></li>
-                <li class="nav-item nav-item--categories" id="#fitness"><a href="#">#Fitness</a></li>
-                <li class="nav-item nav-item--categories" id="#freetime"><a href="#">#Free-time</a></li>
-                <li class="nav-item nav-item--categories" id="#events"><a href="#">#Events</a></li>
-            </ul>
-        </section>
-        <div class="divider"></div>
-        <section class="container">
-            <h2 class="title">Posts</h2>
-            <div class="container container--horizontal" id="postCardsContainer">
-            </div>
-        </section>
-        <div class="divider"></div>
+      <section class="container parallax" id="hero-section">
+        <a href="./index.html"
+          ><img
+            src="./images/transLogo200x200.png"
+            alt="mamy aktywnie po kobiecemu"
+            id="hero-logo"
+        /></a>
+      </section>
+      <div class="divider"></div>
+      <section class="container">
+        <ul class="unstyled unstyled--categories">
+          <li class="nav-item nav-item--categories selected" id="#all">
+            <a href="#">All posts</a>
+          </li>
+          <li class="nav-item nav-item--categories" id="#activities">
+            <a href="#">#Activities</a>
+          </li>
+          <li class="nav-item nav-item--categories" id="#fitness">
+            <a href="#">#Fitness</a>
+          </li>
+          <li class="nav-item nav-item--categories" id="#freetime">
+            <a href="#">#Free-time</a>
+          </li>
+          <li class="nav-item nav-item--categories" id="#events">
+            <a href="#">#Events</a>
+          </li>
+        </ul>
+      </section>
+      <div class="divider"></div>
+      <section class="container">
+        <h2 class="title">Posts</h2>
+        <div
+          class="container container--horizontal"
+          id="postCardsContainer"
+        ></div>
+      </section>
+      <div class="divider"></div>
     </main>
     <footer class="container container--horizontal">
-        <p>Mamy Aktywnie | Stefano Rocchetti</p>
-        <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
-        <ul class="unstyled unstyled--social">
-            <li><a class="social-icon" href="https://www.facebook.com/profile.php?id=100093119156084"><i
-                        class="fab fa-facebook"></i></a></li>
-            <li><a class="social-icon" href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="><i
-                        class="fab fa-instagram"></i></a></li>
-        </ul>
+      <p>Mamy Aktywnie | Stefano Rocchetti</p>
+      <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
+      <ul class="unstyled unstyled--social">
+        <li>
+          <a
+            class="social-icon"
+            href="https://www.facebook.com/profile.php?id=100093119156084"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon"
+            href="https://instagram.com/by_rocchetti?igshid=MzNlNGNkZWQ4Mg=="
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>
