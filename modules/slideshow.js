@@ -12,16 +12,6 @@ const carouselSlideDotsContainer = document.getElementById(
 );
 let root = document.documentElement;
 
-// const createHtmlSlideCarousel = (postInfo, slideIndex, totalSlidesArray) => {
-//   const contentHtml = `<a href="./post.html?post_id=${postInfo.id - 1}" class="carousel-slide-a">
-//                         <div class="carousel-slide-div carousel-slide-div--hide">
-//                           <img class="img-carousel" src=${postInfo.image} alt=${postInfo.description}>
-//                           <div class="slide-number-text">${slideIndex + 1}/${totalSlidesArray.length}</div>
-//                           <div class="slide-title">${postInfo.title}</div>
-//                         </div>
-//                       </a>`;
-//   return contentHtml;
-// };
 const createHtmlSlideCarousel = (postInfo, slideIndex, totalSlidesArray) => {
   const fragmentInside = document.createDocumentFragment();
 
@@ -55,23 +45,12 @@ const createHtmlSlideCarousel = (postInfo, slideIndex, totalSlidesArray) => {
   return carouselAnchor;
 };
 
-// const addSlideDot = () => {
-//   return `<span class="dot"></span>`;
-// };
 const addSlideDot = () => {
   const dot = document.createElement("span");
   dot.classList.add("dot");
   return dot;
 };
 
-// postsForCarouselArr.map((slide, index, postsForCarouselArr) => {
-//   carouselSlidesContainer.innerHTML += createHtmlSlideCarousel(
-//     slide,
-//     index,
-//     postsForCarouselArr
-//   );
-//   carouselSlideDotsContainer.innerHTML += addSlideDot();
-// });
 postsForCarouselArr.map((slide, index, postsForCarouselArr) => {
   carouselSlidesContainer.appendChild(
     createHtmlSlideCarousel(slide, index, postsForCarouselArr)
