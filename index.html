@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Mamy Aktywnie</title>
+
     <link
       rel="shortcut icon"
       href="./images/logo 100x100.png"
@@ -14,13 +15,27 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
     />
-    <script src="main.js" type="module"></script>
+    <script src="./modules/mobileNav.js" defer></script>
+
+    <script type="module" src="main.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.9/swiped-events.min.js"
+      integrity="sha512-Km1M9MRIhy+uzmSn7MU2G0fQawFMpfpScHpf0UUvcpkGJCJhwlTRF/mbTUimo1N9woYZ5RLES7iL+kp65Q1d0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      async
+    ></script>
   </head>
 
   <body>
     <header>
+      <button class="mobile-nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <nav>
-        <ul class="unstyled">
+        <ul class="navigation unstyled">
           <li class="nav-item nav-item--active">
             <a href="index.html">Home</a>
           </li>
@@ -40,34 +55,24 @@
       </section>
       <div class="divider"></div>
       <section class="container">
+        <h2 class="title">Latest posts</h2>
         <div
           class="container container--carousel"
-          id="carusel-slides-container"
+          id="carousel-slides-container"
         >
-          <h2 class="title">Latest posts</h2>
-          <!-- <div class="carousel-slide-div transition-slide">
-                    <div class="slide-number-text">1/3</div>
-                    <img class="img-carousel" src="./images/dance1740x1245.jpg" alt="dancing shadow">
-                    <div class="slide-title">Dancing</div>
-                </div>
-                <div class="carousel-slide-div transition-slide">
-                    <div class="slide-number-text">2/3</div>
-                    <img class="img-carousel" src="./images/treningpersonalny1740x1245.jpg" alt="training">
-                    <div class="slide-title">Personal trainer</div>
-                </div>
-                <div class="carousel-slide-div transition-slide">
-                    <div class="slide-number-text">3/3</div>
-                    <img class="img-carousel" src="./images/buggy1740x1245.jpg" alt="buggy">
-                    <div class="slide-title">Buggy gym</div>
-                </div> -->
+          <a class="change-slide-area change-slide-area--left unstyled--link"
+            >&#10094;</a
+          >
+          <a class="change-slide-area change-slide-area--right unstyled--link"
+            >&#10095;</a
+          >
           <a class="btn-change-slide btn-change-slide--prev">&#10094;</a>
           <a class="btn-change-slide btn-change-slide--next">&#10095;</a>
         </div>
-        <div class="container container--horizontal">
-          <span class="dot dot--active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+        <div
+          class="container container--horizontal"
+          id="carousel-slide-dots-container"
+        ></div>
       </section>
       <div class="divider"></div>
       <section class="container">
@@ -102,7 +107,6 @@
       <div class="divider"></div>
       <section class="container">
         <h2 class="title">Meet the author</h2>
-        <!-- Image and description -->
         <div class="container container--horizontal container--small">
           <img
             src="./images/AboutMe2.jpg"

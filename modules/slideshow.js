@@ -1,56 +1,130 @@
-// import { postsInfoArray } from "./posts.js";
 import postsDataJSON from '../posts-data.json' assert { type: 'json' };
 
-const caruselSlidesContainer = document.getElementById(
-  'carusel-slides-container',
-);
-const createHtmlSlideCarusel = (postInfo, slideIndex, totalSlidesArray) => {
-  const slideCarouselHtml = `<a href="./post.html?post_id=${postInfo.id - 1}" class="carousel-slide-a">
-                              <div class="carousel-slide-div transition-slide">
-                                <div class="slide-number-text">${slideIndex + 1}/${totalSlidesArray.length}</div>
-                                <img class="img-carousel" src=${postInfo.image} alt=${postInfo.description}>
-                                <div class="slide-title">${postInfo.title}</div>
-                              </div>
-                            </a>`;
-  return slideCarouselHtml;
-};
-
-let postsForCarusel = postsDataJSON.posts.filter((post) =>
+let postsForCarouselArr = postsDataJSON.posts.filter((post) =>
   post.tags.includes('#slideshow'),
 );
-postsForCarusel.map(
-  (slide, index, postsForCarusel) =>
-    (caruselSlidesContainer.innerHTML += createHtmlSlideCarusel(
-      slide,
-      index,
-      postsForCarusel,
-    )),
+
+const carouselSlidesContainer = document.getElementById(
+  'carousel-slides-container',
 );
-let currentSlideIndex = 1;
-function showSlides(n) {
-  let i;
+const carouselSlideDotsContainer = document.getElementById(
+  'carousel-slide-dots-container',
+);
+let root = document.documentElement;
+
+const createHtmlSlideCarousel = (postInfo, slideIndex, totalSlidesArray) => {
+  const fragmentInside = document.createDocumentFragment();
+
+  const carouselAnchor = document.createElement('a');
+  carouselAnchor.setAttribute(
+    'href',
+    `"./post.html?post_id=${postInfo.id - 1}"`,
+  );
+  carouselAnchor.classList.add('carousel-slide-a');
+
+  const carouselDiv = document.createElement('div');
+  carouselDiv.classList.add('carousel-slide-div', 'carousel-slide-div--hide');
+
+  const carouselImage = document.createElement('img');
+  carouselImage.setAttribute('src', `${postInfo.image}`);
+  carouselImage.setAttribute('alt', `${postInfo.description}`);
+  carouselImage.classList.add('img-carousel');
+
+  const slideNumberDiv = document.createElement('div');
+  slideNumberDiv.classList.add('slide-number-text');
+  slideNumberDiv.textContent = `${slideIndex + 1}/${totalSlidesArray.length}`;
+
+  const slideTitleDiv = document.createElement('div');
+  slideTitleDiv.classList.add('slide-title');
+  slideTitleDiv.textContent = `${postInfo.title}`;
+
+  fragmentInside.append(carouselImage, slideNumberDiv, slideTitleDiv);
+  carouselDiv.appendChild(fragmentInside);
+  carouselAnchor.appendChild(carouselDiv);
+
+  return carouselAnchor;
+};
+
+const addSlideDot = () => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  return dot;
+};
+
+postsForCarouselArr.map((slide, index, postsForCarouselArr) => {
+  carouselSlidesContainer.appendChild(
+    createHtmlSlideCarousel(slide, index, postsForCarouselArr),
+  );
+  carouselSlideDotsContainer.appendChild(addSlideDot());
+});
+
+const carouselSlides = document.getElementsByClassName('carousel-slide-a');
+
+Array.prototype.forEach.call(carouselSlides, (slide) => {
+  slide.addEventListener('swiped', (e) => {
+    if (e.detail.dir === 'left') {
+      changeSlide(1);
+    } else {
+      changeSlide(-1);
+    }
+  });
+});
+
+let currentSlideIndex = 0;
+
+const showSlides = (slideOut, current) => {
   const slides = document.getElementsByClassName('carousel-slide-div');
+  const carouselImages = document.getElementsByClassName('img-carousel');
   const dots = document.getElementsByClassName('dot');
-  if (n > slides.length) {
-    currentSlideIndex = 1;
+
+  if (current > slides.length - 1) {
+    currentSlideIndex = 0;
   }
-  if (n < 1) {
-    currentSlideIndex = slides.length;
+
+  if (current < 0) {
+    currentSlideIndex = slides.length - 1;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.add('carousel-slide-div--hide');
+
+  if (slideOut === current) {
+    slides[currentSlideIndex].classList.toggle(
+      'carousel-slide-div--hide',
+      false,
+    );
+    carouselImages[currentSlideIndex].classList.toggle(
+      'transition-slide-in',
+      true,
+    );
+    dots[currentSlideIndex].classList.toggle('dot--active', true);
+  } else {
+    carouselImages[slideOut].classList.toggle('transition-slide-out', true);
+    setTimeout(() => {
+      carouselImages[slideOut].classList.toggle('transition-slide-out', false);
+      slides[slideOut].classList.toggle('carousel-slide-div--hide', true);
+      dots[slideOut].classList.toggle('dot--active', false);
+    }, 500);
+    setTimeout(() => {
+      slides[currentSlideIndex].classList.toggle(
+        'carousel-slide-div--hide',
+        false,
+      );
+      carouselImages[currentSlideIndex].classList.toggle(
+        'transition-slide-in',
+        true,
+      );
+      dots[currentSlideIndex].classList.toggle('dot--active', true);
+    }, 500);
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' dot--active', '');
-  }
-  slides[currentSlideIndex - 1].classList.remove('carousel-slide-div--hide');
-  dots[currentSlideIndex - 1].className += ' dot--active';
-}
-function changeSlide(n = 1) {
-  showSlides((currentSlideIndex += n));
-}
-function currentSlide(n) {
-  showSlides((currentSlideIndex = n));
-}
-showSlides(currentSlideIndex);
+};
+
+const changeSlide = (n = 1) => {
+  root.style.setProperty('--translate-direction', `${-n}`);
+  showSlides(currentSlideIndex, (currentSlideIndex += n));
+};
+
+const currentSlide = (n) => {
+  showSlides(currentSlideIndex, (currentSlideIndex = n));
+};
+
+showSlides(currentSlideIndex, currentSlideIndex);
+
 export { changeSlide, currentSlide };
