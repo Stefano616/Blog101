@@ -1,4 +1,4 @@
-import postsDataJSON from '../posts-data.json' assert { type: 'json' };
+import postsDataJSON from '../posts-data.json' with { type: 'json' };
 
 let postsForCarouselArr = postsDataJSON.posts.filter((post) =>
   post.tags.includes('#slideshow'),
@@ -16,10 +16,7 @@ const createHtmlSlideCarousel = (postInfo, slideIndex, totalSlidesArray) => {
   const fragmentInside = document.createDocumentFragment();
 
   const carouselAnchor = document.createElement('a');
-  carouselAnchor.setAttribute(
-    'href',
-    `"./post.html?post_id=${postInfo.id - 1}"`,
-  );
+  carouselAnchor.setAttribute('href', `./post.html?post_id=${postInfo.id - 1}`);
   carouselAnchor.classList.add('carousel-slide-a');
 
   const carouselDiv = document.createElement('div');
