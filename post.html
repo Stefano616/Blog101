@@ -1,45 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Mamy Aktywnie</title>
-    <link rel="shortcut icon" href="./images/logo 100x100.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/logo 100x100.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
     <script type="module" src="./modules/displayPost.js"></script>
-</head>
+    <script src="./modules/mobileNav.js" defer></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <ul class="unstyled">
-                <li class="nav-item"><a href="./index.html">Home</a></li>
-                <li class="nav-item"><a href="./categories.html">All posts</a></li>
-                <li class="nav-item"><a href="./about.html">About</a></li>
-                <li class="nav-item"><a href="./contact.html">Contacts</a></li>
-            </ul>
-        </nav>
+      <button class="mobile-nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav>
+        <ul class="navigation unstyled">
+          <li class="nav-item"><a href="./index.html">Home</a></li>
+          <li class="nav-item"><a href="./categories.html">All posts</a></li>
+          <li class="nav-item"><a href="./about.html">About</a></li>
+          <li class="nav-item"><a href="./contact.html">Contacts</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section class="container parallax" id="hero-section">
-            <img src="./images/transLogo200x200.png" alt="mamy aktywnie po kobiecemu" id="hero-logo">
-        </section>
-        <div class="divider"></div>
-        <section class="container container--medium" id="post-container">
-            <img src="../images/buggy1740x1245.jpg" alt="image" id="post-image">
-        </section>
-        <div class="divider"></div>
+      <section class="container parallax" id="hero-section">
+        <img
+          src="./images/transLogo200x200.png"
+          alt="mamy aktywnie po kobiecemu"
+          id="hero-logo"
+        />
+      </section>
+      <div class="divider"></div>
+      <section class="container container--medium" id="post-container">
+        <div class="container--post-image">
+          <img src="../images/buggy1740x1245.jpg" alt="image" id="post-image" />
+        </div>
+      </section>
+      <div class="divider"></div>
     </main>
     <footer class="container container--horizontal">
-        <p>Mamy Aktywnie | Stefano Rocchetti</p>
-        <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
-        <ul class="unstyled unstyled--social">
-            <li><a class="social-icon" href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a class="social-icon" href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+      <p>Mamy Aktywnie | Stefano Rocchetti</p>
+      <p><a href="mailto:mamyaktywnie@gmail.com">mamyaktywnie@gmail.com</a></p>
+      <ul class="unstyled unstyled--social">
+        <li>
+          <a class="social-icon" href="#"><i class="fab fa-facebook"></i></a>
+        </li>
+        <li>
+          <a class="social-icon" href="#"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
     </footer>
-</body>
-
+  </body>
 </html>
