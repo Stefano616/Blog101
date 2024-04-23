@@ -17,7 +17,7 @@ function createHtmlPostInfo(postInfo) {
 }
 const showPosts = (postToShow) => {
   postToShow.map((category) => {
-    fetch('../posts-data.json')
+    fetch('posts-data.json')
       .then((response) => response.json())
       .then((postsDataJSON) => {
         postsDataJSON.posts
