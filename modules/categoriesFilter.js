@@ -1,5 +1,5 @@
 // import { postsInfoArray } from "./posts.js";
-// import postsDataJSON from '../posts-data.json' assert { type: 'json' };
+import postsDataJSON from '../posts-data.json' with { type: 'json' };
 
 const categoriesArray = document.getElementsByClassName('nav-item--categories');
 const postContainer = document.getElementById('postCardsContainer');
@@ -17,17 +17,17 @@ function createHtmlPostInfo(postInfo) {
 }
 const showPosts = (postToShow) => {
   postToShow.map((category) => {
-    fetch('posts-data.json')
-      .then((response) => response.json())
-      .then((postsDataJSON) => {
-        postsDataJSON.posts
-          .filter((postCategory) => postCategory.tags.includes(category))
-          .map((post) => {
-            postContainer.innerHTML += createHtmlPostInfo(post);
-            return postContainer;
-          });
+    // fetch('../posts-data.json')
+    //   .then((response) => response.json())
+    //   .then((postsDataJSON) => {
+    postsDataJSON.posts
+      .filter((postCategory) => postCategory.tags.includes(category))
+      .map((post) => {
+        postContainer.innerHTML += createHtmlPostInfo(post);
+        return postContainer;
       });
   });
+  // });
 };
 const loadPosts = () => {
   if (!localStorage.key(0)) {
