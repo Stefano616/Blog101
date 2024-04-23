@@ -406,7 +406,7 @@ footer {
 }
 
 .container--post-image {
-  width: 60%;
+  width: 80%;
 }
 
 /* keyframes */
@@ -570,6 +570,13 @@ footer {
   .title {
     margin-block: 1em;
   }
+  /* hero section */
+  #hero-section {
+    min-height: 50vh;
+  }
+  #hero-logo {
+    min-width: 250px;
+  }
   #carousel-slide-dots-container {
     margin-top: 1em;
   }
@@ -598,12 +605,14 @@ footer {
   .change-slide-area--right {
     right: 0;
   }
+  /* about */
   #description {
     font-size: 1rem;
   }
   .text-styled {
     font-size: 2.5rem;
   }
+  /* contacts */
   input,
   textarea {
     font-size: 1.125rem;
